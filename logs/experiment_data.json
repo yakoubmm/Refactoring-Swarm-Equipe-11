@@ -1,11 +1,727 @@
 [
-  {
-    "id": "9e82e9b0-9b43-4a78-af43-d5d5ef848a2f",
-    "timestamp": "2025-12-26T01:26:41.177789",
-    "agent": "System",
-    "model": "unknown",
-    "action": "STARTUP",
-    "details": "Target: ./sandbox",
-    "status": "INFO"
-  }
+    {
+        "id": "9e82e9b0-9b43-4a78-af43-d5d5ef848a2f",
+        "timestamp": "2025-12-26T01:26:41.177789",
+        "agent": "System",
+        "model": "unknown",
+        "action": "STARTUP",
+        "details": "Target: ./sandbox",
+        "status": "INFO"
+    },
+    {
+        "id": "13b45b92-d48d-4e1b-aa28-b9d80bd557a3",
+        "timestamp": "2026-01-03T01:00:10.609118",
+        "agent": "TestAgent",
+        "model": "test-model",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Test prompt",
+            "output_response": "Test response",
+            "test": true
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "322fe521-7b06-4c55-8116-345c27173a65",
+        "timestamp": "2026-01-03T01:05:43.358770",
+        "agent": "TestAgent",
+        "model": "test-model",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Test prompt",
+            "output_response": "Test response",
+            "test": true
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "d76442e3-7327-4f4b-a71d-1f50438c86bd",
+        "timestamp": "2026-01-03T01:36:14.023681",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 1,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "aca24b98-206d-4e03-9007-692c3246466b",
+        "timestamp": "2026-01-03T01:36:14.025930",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 1,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "807367b6-fc7e-42a2-97d5-dbe194281ae2",
+        "timestamp": "2026-01-03T01:36:16.164302",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 1,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "481ee074-9620-4846-a2c2-7a1cf4570294",
+        "timestamp": "2026-01-03T01:36:16.184400",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 2,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "3f2e144d-7012-4443-910e-18f1919234c9",
+        "timestamp": "2026-01-03T01:36:16.215293",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 2,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "d9b7d143-ac95-4165-83cf-216d9adbc766",
+        "timestamp": "2026-01-03T01:36:16.836055",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.00s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 2,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "3e081913-3839-49f0-ac4d-73dcf73b68e8",
+        "timestamp": "2026-01-03T01:36:16.872033",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 3,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "44326e7f-9fc5-47bf-bdea-842cbffffb69",
+        "timestamp": "2026-01-03T01:36:16.916823",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 3,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "c4089ca4-7cd4-4e38-a5a4-614a2aa76b3d",
+        "timestamp": "2026-01-03T01:36:17.593394",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 3,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "12520b49-af71-4afc-b6b4-e2714e0106e7",
+        "timestamp": "2026-01-03T01:36:17.611381",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 4,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "d8ccb877-7087-4806-bd4b-7b03416a4e4a",
+        "timestamp": "2026-01-03T01:36:17.645467",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 4,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "a9fca89c-5591-4ef7-96e0-61ee2389eb18",
+        "timestamp": "2026-01-03T01:36:18.386423",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 4,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "0ecc8c26-3611-4d15-b63f-9570dc876c9f",
+        "timestamp": "2026-01-03T01:36:18.424732",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 5,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "4166528d-8b09-44cc-9e94-3580abf7cbfc",
+        "timestamp": "2026-01-03T01:36:18.458392",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 5,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "73a36b54-719a-4b54-8b48-8ae376473afb",
+        "timestamp": "2026-01-03T01:36:19.228989",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 5,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "8957065a-553e-4948-ad3f-0fcf11af8686",
+        "timestamp": "2026-01-03T01:36:19.248984",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 6,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "6f5c8079-73c8-41f6-9055-3ea8543b666c",
+        "timestamp": "2026-01-03T01:36:19.287035",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 6,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "193eb5aa-c61c-40e6-a97a-b97e1e3d3faa",
+        "timestamp": "2026-01-03T01:36:20.109707",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.02s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 6,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "56d79f3a-58b3-44a4-a015-2324cfb918ec",
+        "timestamp": "2026-01-03T01:36:20.134614",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 7,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "45fa358a-1cdc-460f-a5a1-571111855b6c",
+        "timestamp": "2026-01-03T01:36:20.163667",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 7,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "6a876218-de8e-403a-bf65-3f4780b9ed5b",
+        "timestamp": "2026-01-03T01:36:20.781916",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 7,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "c41794e4-1b53-4f26-8ae7-5dcc6140e55a",
+        "timestamp": "2026-01-03T01:36:20.815513",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 8,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "2819a404-6320-4d41-8c35-2e515248dd27",
+        "timestamp": "2026-01-03T01:36:20.849836",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 8,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "00ebd00f-cab6-4ddb-9c36-0f378bbb8f43",
+        "timestamp": "2026-01-03T01:36:21.447858",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 8,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "6435c816-3503-4a0c-ae0e-6e9779503d91",
+        "timestamp": "2026-01-03T01:36:21.478580",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 9,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "5ca66061-3038-4182-b33b-734ee970b312",
+        "timestamp": "2026-01-03T01:36:21.506050",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 9,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "925c84aa-b458-4f2d-bb90-db7da4c781b7",
+        "timestamp": "2026-01-03T01:36:22.104453",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 9,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "ddc08a4f-d4ae-4c5e-a2ad-dd4d3135c8a6",
+        "timestamp": "2026-01-03T01:36:22.129496",
+        "agent": "Auditor",
+        "model": "gemini-1.5-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze code in: ./sandbox/dataset_inconnu",
+            "output_response": "{}",
+            "iteration": 10,
+            "issues_found": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "4479d7c1-31b1-4a0e-a6c9-0b057ec02d50",
+        "timestamp": "2026-01-03T01:36:22.154453",
+        "agent": "Fixer",
+        "model": "gemini-1.5-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": "Apply fixes based on plan: {}",
+            "output_response": "{\"success\": true, \"files_modified\": 0, \"changes_made\": [], \"model\": \"gemini-1.5-flash\"}",
+            "iteration": 10,
+            "files_modified": 0
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "385f8148-a87f-4d73-82cd-f7436775289f",
+        "timestamp": "2026-01-03T01:36:22.758409",
+        "agent": "Judge",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixes in: ./sandbox/dataset_inconnu",
+            "output_response": "============================= test session starts =============================\nplatform win32 -- Python 3.11.9, pytest-7.4.4, pluggy-1.6.0 -- C:\\Users\\XPS\\AppData\\Local\\Programs\\Python\\Python311\\python.exe\ncachedir: .pytest_cache\nrootdir: C:\\Users\\XPS\\OneDrive\\Desktop\\TP_IGL\\v1\\Refactoring-Swarm-Equipe-11\\sandbox\\dataset_inconnu\nplugins: anyio-4.12.0\ncollecting ... collected 0 items\n\n============================ no tests ran in 0.01s ============================\nERROR: file or directory not found: ./sandbox/dataset_inconnu\n\n",
+            "iteration": 10,
+            "all_tests_passed": false
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "27257d3d-5856-4fa1-8f0f-54de52082e33",
+        "timestamp": "2026-01-03T02:14:47.958607",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "0e164993-05e4-42ca-be9a-947068d28bff",
+        "timestamp": "2026-01-03T02:14:47.966071",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 1
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "f07256e8-979b-481f-8664-d545f9e802c7",
+        "timestamp": "2026-01-03T02:19:50.818726",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "a5d64e34-d318-4331-9ff8-4343a7da46ce",
+        "timestamp": "2026-01-03T02:19:50.853892",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 2
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "b440416f-cb5e-4f24-b39e-4147811b48a0",
+        "timestamp": "2026-01-03T02:24:53.710397",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "58747bef-7409-4beb-aba3-2d6c0fe72602",
+        "timestamp": "2026-01-03T02:24:53.748714",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 3
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "c174b4b1-0ca8-4143-889c-76ade269fd99",
+        "timestamp": "2026-01-03T02:29:57.103085",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "1ec13208-13dc-4b86-a56e-f0c5e00ddc6f",
+        "timestamp": "2026-01-03T02:29:57.149229",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 4
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "8f2c2328-ba10-4439-95af-663985b1e55e",
+        "timestamp": "2026-01-03T02:34:59.985972",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "9b11a8e4-6a65-4df4-9ccd-2eb2c1b22612",
+        "timestamp": "2026-01-03T02:35:00.026619",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 5
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "43c23626-9b3a-4d73-a4a5-9f6815827f89",
+        "timestamp": "2026-01-03T02:40:02.853308",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "f3383279-69cf-4311-b8c4-8b9f1389e09d",
+        "timestamp": "2026-01-03T02:40:02.881308",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 6
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "39427ae0-982d-4a66-ba64-da17d084e54a",
+        "timestamp": "2026-01-03T02:45:05.672193",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "21f4f18b-4558-4faa-a4ae-ff46e6257281",
+        "timestamp": "2026-01-03T02:45:05.704194",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 7
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "157ecb9b-1078-4bf8-a0f5-ce0ce204775d",
+        "timestamp": "2026-01-03T15:21:16.556778",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "88041f4a-d89d-4272-a989-db5713df7060",
+        "timestamp": "2026-01-03T15:21:16.592777",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 8
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "31faf876-0801-46a7-bb24-ee2731272451",
+        "timestamp": "2026-01-03T15:26:19.656298",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "fe28cae4-3d00-46e9-ad56-159e0286953b",
+        "timestamp": "2026-01-03T15:26:19.676301",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 9
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "3ed76043-b339-4852-be81-462308cedcbb",
+        "timestamp": "2026-01-03T15:31:23.450388",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Identify all bugs, bad practices, and code quality issues\n2. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n3. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.",
+            "files_analyzed": 2,
+            "error": "404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods."
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "65dfbcd5-9eca-4d76-8889-0d705f0f32b6",
+        "timestamp": "2026-01-03T15:31:23.490521",
+        "agent": "Auditor",
+        "model": "gemini-pro",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.', 'model': 'gemini-pro'}",
+            "iteration": 10
+        },
+        "status": "FAILURE"
+    }
 ]
