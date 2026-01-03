@@ -67,7 +67,7 @@ class Auditor(BaseAgent):
             })
         
         # Scan Python files
-        python_files = self._find_python_files(target_dir)
+        python_files = self._find_python_files(target_dir) # here too it should call the function from src/tools/filesystem.py
         
         if not python_files:
             return self.format_output({
@@ -77,11 +77,13 @@ class Auditor(BaseAgent):
             })
         
         # Read file contents
-        file_contents = self._read_files(python_files)
+        file_contents = self._read_files(python_files) # here too it should call the read function from src/tools/filesystem.py
+
+        # there should be a here call to the analysis function that runs pylint from src/tools/analysis 
+        # the returned analysis+score should go in the prompt sent to gemini
         
         # Create analysis prompt for Gemini
         analysis_prompt = self._build_analysis_prompt(file_contents)
-        
         # Call Gemini LLM for code analysis
         try:
             message = HumanMessage(content=analysis_prompt)
@@ -134,7 +136,7 @@ class Auditor(BaseAgent):
                 "error": error_msg
             })
     
-    def _find_python_files(self, target_dir: str) -> list:
+    def _find_python_files(self, target_dir: str) -> list: # same thing here  
         """Find all Python files in target directory."""
         python_files = []
         for root, dirs, files in os.walk(target_dir):
@@ -143,7 +145,7 @@ class Auditor(BaseAgent):
                     python_files.append(os.path.join(root, file))
         return python_files
     
-    def _read_files(self, python_files: list) -> Dict[str, str]:
+    def _read_files(self, python_files: list) -> Dict[str, str]: # and here 
         """
         Read contents of all Python files.
         
@@ -162,7 +164,7 @@ class Auditor(BaseAgent):
                 file_contents[file_path] = f"[Error reading file: {str(e)}]"
         return file_contents
     
-    def _build_analysis_prompt(self, file_contents: Dict[str, str]) -> str:
+    def _build_analysis_prompt(self, file_contents: Dict[str, str]) -> str:  
         """
         Build a structured prompt for Gemini to analyze Python code.
         

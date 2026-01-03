@@ -86,7 +86,7 @@ class Fixer(BaseAgent):
             
             try:
                 # Read original file
-                original_code = self._read_file(file_path)
+                original_code = self._read_file(file_path) # here too 
                 
                 # Build fix prompt for Gemini
                 fix_prompt = self._build_fix_prompt(file_path, original_code, issues)
@@ -100,7 +100,7 @@ class Fixer(BaseAgent):
                 fixed_code = self._extract_code(fixed_code)
                 
                 # Write fixed code to file (with backup)
-                self._write_file(file_path, fixed_code)
+                self._write_file(file_path, fixed_code) # again
                 
                 # LOG THE INTERACTION (Mandatory for scientific study)
                 log_experiment(
@@ -243,7 +243,7 @@ FIXED CODE:"""
         
         return response
     
-    def _read_file(self, file_path: str) -> str:
+    def _read_file(self, file_path: str) -> str: # same thing here 
         """Safely read a Python file."""
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -251,7 +251,7 @@ FIXED CODE:"""
         except Exception as e:
             raise Exception(f"Error reading {file_path}: {str(e)}")
     
-    def _write_file(self, file_path: str, content: str) -> None:
+    def _write_file(self, file_path: str, content: str) -> None: # and here 
         """Safely write modified content to a Python file with backup."""
         try:
             # Create backup

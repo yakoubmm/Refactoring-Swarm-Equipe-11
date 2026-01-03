@@ -69,7 +69,7 @@ class Judge(BaseAgent):
             "model": self.model_name
         }
     
-    def _run_pytest(self, target_dir: str) -> tuple:
+    def _run_pytest(self, target_dir: str) -> tuple: # this should be in src/tools too
         """
         Run pytest on target directory.
         
