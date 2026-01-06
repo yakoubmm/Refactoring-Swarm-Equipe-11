@@ -164,56 +164,50 @@ class Auditor(BaseAgent):
                 file_contents[file_path] = f"[Error reading file: {str(e)}]"
         return file_contents
     
-    def _build_analysis_prompt(self, file_contents: Dict[str, str]) -> str:  
-        """
-        Build a structured prompt for Gemini to analyze Python code.
-        
-        Args:
-            file_contents (Dict): Dictionary of file paths and contents
-            
-        Returns:
-            str: Formatted prompt for LLM
-        """
+    def _build_analysis_prompt(self, file_contents: Dict[str, str]) -> str:
         files_text = ""
         for file_path, content in file_contents.items():
-            files_text += f"\n{'='*60}\nFILE: {file_path}\n{'='*60}\n{content}\n"
-        
-        prompt = f"""You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.
+            files_text += f"\nFILE: {file_path}\n{content}\n"
 
+        return f"""
+ROLE:
+You are a senior Python code auditor.
+
+GOAL:
+Identify ONLY real and verifiable issues present in the code.
+
+CONSTRAINTS (MANDATORY):
+- Do NOT invent files, functions, variables, or dependencies
+- Do NOT modify the code
+- Do NOT repeat the code in your output
+- Report ONLY issues that are visible in the code
+- If no issues are found, return an empty JSON structure
+
+CODE:
 {files_text}
 
-ANALYSIS REQUIREMENTS:
-1. Identify all bugs, bad practices, and code quality issues
-2. For each issue, provide:
-   - Type of issue (bug, style, performance, security, documentation)
-   - Severity (critical, high, medium, low)
-   - Location (file, line number if possible)
-   - Description of the problem
-   - Suggested fix
-
-3. Output MUST be valid JSON format with this structure:
+OUTPUT FORMAT (JSON ONLY):
 {{
-  "analysis_summary": "Brief overview of code quality",
   "files": {{
-    "file_path": {{
-      "quality_score": 0.0-1.0,
+    "file.py": {{
       "issues": [
         {{
-          "type": "string",
+          "type": "bug|style|design|performance|security|documentation",
           "severity": "critical|high|medium|low",
-          "description": "string",
-          "suggested_fix": "string"
+          "description": "short factual explanation",
+          "suggested_fix": "high-level idea"
         }}
       ]
     }}
-  }},
-  "total_issues": number,
-  "priority_actions": ["list of highest priority fixes"]
+  }}
 }}
 
-Provide the JSON response only, no additional text."""
-        
-        return prompt
+RULES:
+- Valid JSON only
+- No markdown
+- No explanations outside JSON
+"""
+
     
     def _parse_analysis_response(self, llm_output: str, python_files: list) -> Dict[str, Any]:
         """
