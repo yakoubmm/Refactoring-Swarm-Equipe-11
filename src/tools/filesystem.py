@@ -1,10 +1,9 @@
- 
 from pathlib import Path
 
 # Absolute path to the sandbox directory
 SANDBOX_ROOT = Path("sandbox").resolve()
 
-# Function to ensure the agents don't access anything outside sandbox folder 
+
 def resolve_and_validate_path(user_path: str) -> Path:
     """
     Resolve a path and ensure it is inside the sandbox directory.
@@ -19,18 +18,12 @@ def resolve_and_validate_path(user_path: str) -> Path:
 
     return resolved_path
 
-# Function to list all python files in the sandbox folder
+
 def list_python_files(directory: str) -> list[str]:
     """
     Recursively list all Python (.py) files inside a sandbox directory.
-
-    Args:
-        directory (str): Path to a directory inside the sandbox
-
-    Returns:
-        list[str]: List of file paths as strings
     """
-    safe_dir = resolve_and_validate_path(directory) # call the security function
+    safe_dir = resolve_and_validate_path(directory)
 
     if not safe_dir.exists():
         raise FileNotFoundError(f"Directory not found: {safe_dir}")
@@ -38,21 +31,14 @@ def list_python_files(directory: str) -> list[str]:
     if not safe_dir.is_dir():
         raise NotADirectoryError(f"Not a directory: {safe_dir}")
 
-    python_files = []
-
-    for path in safe_dir.rglob("*.py"):
-        if path.is_file():
-            python_files.append(str(path))
-
-    return python_files
+    return [str(path) for path in safe_dir.rglob("*.py") if path.is_file()]
 
 
-# Function to read a python file and return it's content as a string
 def read_file(path: str) -> str:
     """
     Read and return the content of a file inside the sandbox.
     """
-    safe_path = resolve_and_validate_path(path) 
+    safe_path = resolve_and_validate_path(path)
 
     if not safe_path.exists():
         raise FileNotFoundError(f"File not found: {safe_path}")
@@ -61,3 +47,14 @@ def read_file(path: str) -> str:
         raise IsADirectoryError(f"Not a file: {safe_path}")
 
     return safe_path.read_text(encoding="utf-8")
+
+
+def write_file(path: str, content: str) -> None:
+    """
+    Write content to a file inside the sandbox.
+    - Creates the file if it does not exist
+    - Overwrites the file if it already exists
+    """
+    safe_path = resolve_and_validate_path(path)
+    safe_path.parent.mkdir(parents=True, exist_ok=True)
+    safe_path.write_text(content, encoding="utf-8")
