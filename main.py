@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 from src.utils.logger import log_experiment, ActionType
 from src.agents.auditor import Auditor
 from src.agents.fixer import Fixer
+from src.agents.generator import Generator
 from src.agents.judge import Judge
 
 load_dotenv()
@@ -27,8 +28,10 @@ class Orchestrator:
         self.current_iteration = 0
         self.auditor = Auditor()
         self.fixer = Fixer()
+        self.generator = Generator()
         self.judge = Judge()
         self.execution_history = []
+        self.previous_errors = None
     
     def validate_setup(self) -> bool:
         """Validate that target directory exists and is accessible."""
@@ -69,7 +72,11 @@ class Orchestrator:
             try:
                 # Step 1: AUDITOR ANALYSIS
                 print(f"🔍 [AUDITOR] Analyzing code in '{self.target_dir}'...")
-                audit_result = self.auditor.analyze(self.target_dir)
+                # Pass previous errors to Auditor for context-aware analysis
+                audit_result = self.auditor.analyze(
+                    self.target_dir, 
+                    previous_errors=self.previous_errors
+                )
                 
                 if not audit_result.get("success"):
                     print(f"❌ Auditor analysis failed: {audit_result.get('error')}")
@@ -117,7 +124,16 @@ class Orchestrator:
                 # Agent logs its own LLM interaction - No duplicate logging here
                 # The Fixer already logged via ActionType.FIX
                 
-                # Step 3: JUDGE VALIDATES VIA TESTS
+                # Step 3: GENERATOR - Create tests if missing
+                print(f"\n📝 [GENERATOR] Generating test files if needed...")
+                try:
+                    gen_result = self.generator.execute(self.target_dir)
+                    tests_generated = gen_result.get("tests_generated", 0)
+                    print(f"✅ [GENERATOR] Generated/checked {tests_generated} test file(s)")
+                except Exception as e:
+                    print(f"⚠️  [GENERATOR] Could not generate tests: {str(e)}")
+                
+                # Step 4: JUDGE VALIDATES VIA TESTS
                 print(f"\n✔️  [JUDGE] Running validation tests...")
                 judge_result = self.judge.validate(self.target_dir)
                 
@@ -147,6 +163,9 @@ class Orchestrator:
                 else:
                     # Tests failed - log and continue loop
                     print(f"⚠️  [JUDGE] Tests failed. Errors:\n{test_output}")
+                    
+                    # Capture errors for next iteration's context
+                    self.previous_errors = test_output
                     
                     # Orchestrator logs only high-level failure event
                     log_experiment(
