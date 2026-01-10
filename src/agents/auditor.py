@@ -10,6 +10,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.schema import HumanMessage
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import log_experiment, ActionType
+from src.utils.quota import log_api_call
 
 class Auditor(BaseAgent):
     """
@@ -98,6 +99,11 @@ class Auditor(BaseAgent):
         
         # Step 6: Call LLM with retry logic
         try:
+            # Log API call for quota monitoring
+            quota_status = log_api_call("Auditor")
+            if quota_status.get("is_low_quota"):
+                print(quota_status["warning_message"])
+            
             llm_output = self._call_llm_with_retry(analysis_prompt)
             
             # Step 7: Parse response into structured plan
@@ -315,7 +321,7 @@ RULES:
 - No markdown
 - No explanations outside JSON
 """
-
+        return prompt
     
     def _parse_analysis_response(self, llm_output: str, python_files: list) -> Dict[str, Any]:
         """

@@ -10,6 +10,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.schema import HumanMessage
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import log_experiment, ActionType
+from src.utils.quota import log_api_call
 
 class Fixer(BaseAgent):
     """
@@ -116,6 +117,12 @@ class Fixer(BaseAgent):
                 else:
                     # Single chunk - process normally
                     fix_prompt = self._build_fix_prompt(file_path, original_code, issues)
+                    
+                    # Log API call for quota monitoring
+                    quota_status = log_api_call("Fixer")
+                    if quota_status.get("is_low_quota"):
+                        print(quota_status["warning_message"])
+                    
                     fixed_code = self._get_fixed_code(fix_prompt)
                 
                 # Extract code from response (remove markdown if present)

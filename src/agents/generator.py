@@ -10,6 +10,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.schema import HumanMessage
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import log_experiment, ActionType
+from src.utils.quota import log_api_call
 
 
 class Generator(BaseAgent):
@@ -144,6 +145,11 @@ class Generator(BaseAgent):
     def _generate_test_for_file(self, filepath: str, code: str, audit_plan: Dict[str, Any]) -> str:
         """Generate pytest code for a source file."""
         prompt = self._build_test_prompt(filepath, code, audit_plan)
+        
+        # Log API call for quota monitoring
+        quota_status = log_api_call("Generator")
+        if quota_status.get("is_low_quota"):
+            print(quota_status["warning_message"])
         
         try:
             return self._call_llm_with_retry(prompt)

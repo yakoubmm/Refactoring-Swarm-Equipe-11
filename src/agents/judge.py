@@ -9,7 +9,7 @@ import time
 from typing import Dict, Any
 from src.agents.base_agent import BaseAgent
 from langchain_google_genai import ChatGoogleGenerativeAI
-from src.utils.logger import ActionType
+from src.utils.logger import ActionType, log_experiment
 
 class Judge(BaseAgent):
     """
@@ -126,13 +126,18 @@ FEEDBACK: [Specific actions for the fixer agent]"""
             # Call LLM with retry logic
             diagnosis_text = self._call_llm_with_retry(prompt)
             
-            # Log the diagnosis
-            from src.utils.logger import logger
-            logger.log({
-                "action_type": ActionType.DEBUG.value,
-                "input_prompt": prompt[:500],
-                "output_response": diagnosis_text[:500]
-            })
+            # Log the diagnosis using proper log_experiment
+            log_experiment(
+                agent_name="Judge",
+                model_used="gemini-2.0-flash",
+                action=ActionType.DEBUG,
+                details={
+                    "input_prompt": prompt,
+                    "output_response": diagnosis_text,
+                    "target_dir": target_dir
+                },
+                status="SUCCESS"
+            )
             
             # Parse diagnosis and feedback
             diagnosis = None
@@ -146,6 +151,19 @@ FEEDBACK: [Specific actions for the fixer agent]"""
             return diagnosis or diagnosis_text[:200], feedback or diagnosis_text[200:400]
         
         except Exception as e:
+            # Log failed diagnosis
+            log_experiment(
+                agent_name="Judge",
+                model_used="gemini-2.0-flash",
+                action=ActionType.DEBUG,
+                details={
+                    "input_prompt": prompt,
+                    "output_response": str(e),
+                    "target_dir": target_dir,
+                    "error": str(e)
+                },
+                status="FAILURE"
+            )
             return f"Diagnosis error: {str(e)}", None
     
     def _call_llm_with_retry(self, prompt: str, max_retries: int = 3) -> str:

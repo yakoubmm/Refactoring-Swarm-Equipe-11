@@ -4,10 +4,12 @@ import os
 import json
 from dotenv import load_dotenv
 from src.utils.logger import log_experiment, ActionType
+from src.utils.quota import check_quota_before_run, get_quota_monitor
 from src.agents.auditor import Auditor
 from src.agents.fixer import Fixer
 from src.agents.generator import Generator
 from src.agents.judge import Judge
+from src.tools.filesystem import list_python_files, read_file
 
 load_dotenv()
 
@@ -33,6 +35,21 @@ class Orchestrator:
         self.execution_history = []
         self.previous_errors = None
     
+    def _read_current_code(self, target_dir: str) -> dict:
+        """Read all Python files in target directory."""
+        try:
+            python_files = list_python_files(target_dir)
+            current_code = {}
+            for filepath in python_files:
+                try:
+                    current_code[filepath] = read_file(filepath)
+                except Exception as e:
+                    print(f"⚠️  Warning: Could not read {filepath}: {str(e)}")
+            return current_code
+        except Exception as e:
+            print(f"⚠️  Warning: Could not read code files: {str(e)}")
+            return {}
+    
     def validate_setup(self) -> bool:
         """Validate that target directory exists and is accessible."""
         if not os.path.exists(self.target_dir):
@@ -49,6 +66,22 @@ class Orchestrator:
             print(f"⚠️  No Python files found in '{self.target_dir}'")
         
         print(f"✅ Target directory validated: {self.target_dir}")
+        return True
+    
+    def check_quota(self) -> bool:
+        """Check if there's enough API quota before running"""
+        print("\n📊 Checking API quota...")
+        monitor = get_quota_monitor()
+        monitor.print_status()
+        
+        # Check if we have enough for at least 2 iterations
+        has_quota = check_quota_before_run(iterations=2, calls_per_iteration=3)
+        
+        if not has_quota:
+            print("❌ Insufficient API quota to run orchestration")
+            print("   Please upgrade your Gemini API plan or wait for quota reset")
+            return False
+        
         return True
     
     def run_orchestration_loop(self) -> bool:
@@ -127,9 +160,12 @@ class Orchestrator:
                 # Step 3: GENERATOR - Create tests if missing
                 print(f"\n📝 [GENERATOR] Generating test files if needed...")
                 try:
-                    gen_result = self.generator.execute(self.target_dir)
-                    tests_generated = gen_result.get("tests_generated", 0)
-                    print(f"✅ [GENERATOR] Generated/checked {tests_generated} test file(s)")
+                    # Read current code to pass to generator
+                    current_code = self._read_current_code(self.target_dir)
+                    
+                    gen_result = self.generator.execute(self.target_dir, current_code, refactoring_plan)
+                    tests_created = gen_result.get("test_files_created", 0)
+                    print(f"✅ [GENERATOR] Generated/checked {tests_created} test file(s)")
                 except Exception as e:
                     print(f"⚠️  [GENERATOR] Could not generate tests: {str(e)}")
                 
@@ -221,8 +257,17 @@ class Orchestrator:
         if not self.validate_setup():
             return 1
         
+        # Check API quota before running
+        if not self.check_quota():
+            return 1
+        
         # Run orchestration loop
         success = self.run_orchestration_loop()
+        
+        # Print final quota status
+        monitor = get_quota_monitor()
+        print("\n📊 Final Quota Status:")
+        monitor.print_status()
         
         return 0 if success else 1
 
