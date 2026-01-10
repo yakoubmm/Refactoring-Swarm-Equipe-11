@@ -723,5 +723,918 @@
             "iteration": 10
         },
         "status": "FAILURE"
+    },
+    {
+        "id": "b2337a9f-6459-4eff-82e4-3c1160e883d2",
+        "timestamp": "2026-01-05T01:38:58.190951",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 1",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 1
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "f68dfd15-f3cb-4127-8370-5e20d1d582d7",
+        "timestamp": "2026-01-05T01:38:58.241112",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 2",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 2
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "0be0eaf9-1abe-4c4f-946c-109d09d30707",
+        "timestamp": "2026-01-05T01:38:58.299345",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 3",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 3
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "06c9cbfa-024c-4029-b0c5-7b517c5707d5",
+        "timestamp": "2026-01-05T01:38:58.349292",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 4",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 4
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "1060a6cb-5e4a-4fc0-8b08-d7230d1ce38f",
+        "timestamp": "2026-01-05T01:38:58.389334",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 5",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 5
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "776e793f-b63a-4a43-abd9-e911582f38df",
+        "timestamp": "2026-01-05T01:38:58.430405",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 6",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 6
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "564e6abd-90dd-4a46-8f4c-5407e7f89f85",
+        "timestamp": "2026-01-05T01:38:58.467703",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 7",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 7
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "346af79b-caad-4765-846a-9172a8ece08a",
+        "timestamp": "2026-01-05T01:38:58.506399",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 8",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 8
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "d2f2a291-ec2e-424a-842b-b8cf732c976d",
+        "timestamp": "2026-01-05T01:38:58.547480",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 9",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 9
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "e5e814cd-da77-47ea-9023-7c0db0be0070",
+        "timestamp": "2026-01-05T01:38:58.590540",
+        "agent": "Orchestrator",
+        "model": "unknown",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Orchestration iteration 10",
+            "output_response": "Auditor.analyze() got an unexpected keyword argument 'previous_errors'",
+            "iteration": 10
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "cb12228a-6236-4604-8ca3-89cc28ebd829",
+        "timestamp": "2026-01-05T12:51:46.925512",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "95e6bc0c-f014-437b-8e37-0f9f8a4f4097",
+        "timestamp": "2026-01-05T12:51:46.983885",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 1
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "c4f9a645-b678-4d86-b20b-ce97a66ebb00",
+        "timestamp": "2026-01-05T15:28:51.355068",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: Timeout of 60.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:142.251.140.234:443: tcp handshaker shutdown",
+            "files_analyzed": 2,
+            "error": "Timeout of 60.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:142.251.140.234:443: tcp handshaker shutdown"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "9050f5b2-44c0-4000-b28a-9a9c9a25e32d",
+        "timestamp": "2026-01-05T15:28:51.436049",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: Timeout of 60.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:142.251.140.234:443: tcp handshaker shutdown', 'model': 'gemini-2.0-flash'}",
+            "iteration": 2
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "1a084f58-e526-4564-8d33-951cd2dc196d",
+        "timestamp": "2026-01-05T18:42:27.547743",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "fbb43903-a7f0-4b74-8df7-970ac2f02ac8",
+        "timestamp": "2026-01-05T18:42:27.590443",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 3
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "ed6bd4a2-db9e-49f3-97e8-e7860e7b86c0",
+        "timestamp": "2026-01-05T18:57:51.495027",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "671fdc8a-b2c3-4909-a230-49b4da038434",
+        "timestamp": "2026-01-05T18:57:51.517037",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 4
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "3acb037e-3a55-4f03-8b67-c325536b49df",
+        "timestamp": "2026-01-05T19:13:08.513131",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "23ce5441-7420-4297-a411-d7065b031c02",
+        "timestamp": "2026-01-05T19:13:08.538130",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 5
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "d4390c07-e5b0-44d1-b7ff-a0c642a69374",
+        "timestamp": "2026-01-05T19:28:25.020111",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "011985c5-9401-4529-8fbf-dd81f3a0e4c5",
+        "timestamp": "2026-01-05T19:28:25.052891",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 6
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "883df3d2-20c3-4da1-a442-40d4ef8c2f76",
+        "timestamp": "2026-01-05T19:50:20.430223",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "66c6f01d-cb03-4d37-926a-0562d3e58917",
+        "timestamp": "2026-01-05T19:50:20.456241",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 1
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "c327c5c9-8409-4811-aae2-09563c266627",
+        "timestamp": "2026-01-05T20:05:36.401223",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "6fa7dfc1-f1f6-48cd-a217-f3c74d40f559",
+        "timestamp": "2026-01-05T20:05:36.427190",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 2
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "ec19ab2d-6bf4-42d5-b1f8-6203a5073e8a",
+        "timestamp": "2026-01-05T20:20:52.748696",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "bf89a15b-5cfa-4eb0-8649-6beaa636c381",
+        "timestamp": "2026-01-05T20:20:52.775613",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 3
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "0a0ea3b3-e45d-48c1-bfae-643ae8b63406",
+        "timestamp": "2026-01-05T21:28:05.411151",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: Timeout of 60.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:172.217.21.10:443: tcp handshaker shutdown",
+            "files_analyzed": 2,
+            "error": "Timeout of 60.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:172.217.21.10:443: tcp handshaker shutdown"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "77477df6-000f-4864-b4e8-2aca9f1eef22",
+        "timestamp": "2026-01-05T21:28:05.482179",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: Timeout of 60.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNKNOWN: ipv4:172.217.21.10:443: tcp handshaker shutdown', 'model': 'gemini-2.0-flash'}",
+            "iteration": 4
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "13138f6e-b5a4-4982-ac7f-8e6c6effbf08",
+        "timestamp": "2026-01-05T23:58:54.318803",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "d71d59aa-a1bb-4877-954e-b14a2a567593",
+        "timestamp": "2026-01-05T23:58:54.362344",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 5
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "13c20ef3-937a-42df-bee8-8e35cfcbfec9",
+        "timestamp": "2026-01-06T00:14:11.400543",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "96b7bc30-8eba-43a6-ac88-b3d638df1bff",
+        "timestamp": "2026-01-06T00:14:11.458309",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 6
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "282bfd0c-f392-4aae-aeb7-dce80d68a52f",
+        "timestamp": "2026-01-06T00:29:29.757969",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nCODE QUALITY ANALYSIS REPORT\n=============================\n\nOverall Score: 7.699999999999999/10.0\nTotal Issues Found: 23\n\nISSUES BY FILE:\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n    - Line 29: [convention] Trailing whitespace\n    - Line 41: [convention] Trailing whitespace\n    - Line 5: [convention] Missing function or method docstring\n    - Line 9: [convention] Missing function or method docstring\n    - Line 15: [convention] Missing function or method docstring\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n    - Line 33: [convention] Trailing whitespace\n    - Line 42: [convention] Trailing whitespace\n    - Line 48: [convention] Trailing whitespace\n    - Line 56: [convention] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"analysis_summary\": \"Brief overview of code quality\",\n  \"files\": {\n    \"file_path\": {\n      \"quality_score\": 0.0-1.0,\n      \"issues\": [\n        {\n          \"type\": \"string\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"string\",\n          \"suggested_fix\": \"string\"\n        }\n      ]\n    }\n  },\n  \"total_issues\": number,\n  \"priority_actions\": [\"list of highest priority fixes\"]\n}\n\nProvide the JSON response only, no additional text.",
+            "output_response": "Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ",
+            "files_analyzed": 2,
+            "error": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. "
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "56a34c1c-c6e8-47fd-a503-57ffc171c384",
+        "timestamp": "2026-01-06T00:29:29.810681",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/usage?tab=rate-limit. ', 'model': 'gemini-2.0-flash'}",
+            "iteration": 7
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "ba1791c6-d891-40aa-a405-f2ba0db9b131",
+        "timestamp": "2026-01-06T00:40:07.548592",
+        "agent": "Orchestrator",
+        "model": "pytest",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Validate fixed code: ./sandbox/dataset_inconnu",
+            "output_response": "All tests passed - mission complete",
+            "iteration": 1,
+            "all_tests_passed": true
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "79258fc5-d2fa-49c1-a230-74f009b0647b",
+        "timestamp": "2026-01-10T14:43:47.702080",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "4f205aef-370c-4ab8-ab93-ec3a19e5cf30",
+        "timestamp": "2026-01-10T14:43:47.749271",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 1
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "d69f9f93-a279-4f52-86e3-a9c10bbd6c80",
+        "timestamp": "2026-01-10T14:43:53.880131",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "5e13115c-3b2d-46c0-af64-4bff97d864c7",
+        "timestamp": "2026-01-10T14:43:53.924629",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 2
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "018ef030-ce60-4417-92e5-42b74f4b3130",
+        "timestamp": "2026-01-10T14:44:00.022198",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "7ca826cc-5523-4bf7-9548-542fbd0bd3ad",
+        "timestamp": "2026-01-10T14:44:00.073547",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 3
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "fbdfdbfc-2bc7-45a5-ae02-e6bcd7439f53",
+        "timestamp": "2026-01-10T14:44:06.737951",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "ce03a29e-cc9e-43d7-afbb-e4bb3fe3d2f7",
+        "timestamp": "2026-01-10T14:44:06.763947",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 4
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "3ce02816-1810-4426-86b6-10f2355ec4e9",
+        "timestamp": "2026-01-10T14:44:12.894451",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "ca64e267-63c4-4674-ae2d-5ed44aedb900",
+        "timestamp": "2026-01-10T14:44:12.935425",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 5
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "3b1411bc-704f-4088-b4a7-b8e07f097080",
+        "timestamp": "2026-01-10T14:44:19.040268",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "bcfc476f-a087-4e3d-9a79-b0082a600c2c",
+        "timestamp": "2026-01-10T14:44:19.077595",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 6
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "05cb6518-449b-4024-83ff-105e97347c6e",
+        "timestamp": "2026-01-10T14:44:25.179861",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "47aee7ac-e8d6-4129-97e0-f4d48768f399",
+        "timestamp": "2026-01-10T14:44:25.219718",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 7
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "8898f625-3c08-42b6-b36d-e2c4d63287f9",
+        "timestamp": "2026-01-10T14:44:31.696424",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Gemini API error: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "files_analyzed": 2,
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "42446595-c5a4-4302-b84c-a0303d187137",
+        "timestamp": "2026-01-10T14:44:31.725990",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "Analyze: ./sandbox/dataset_inconnu",
+            "output_response": "{'success': False, 'error': 'Gemini API error: 1 validation error for HumanMessage\\ncontent\\n  none is not an allowed value (type=type_error.none.not_allowed)', 'model': 'gemini-2.0-flash'}",
+            "iteration": 8
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "0551519d-945f-4b33-acf7-4cbca0e5cb8c",
+        "timestamp": "2026-01-10T14:59:11.188407",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nPYLINT ANALYSIS REPORT\n==================================================\nOverall Score: 5.3/10.0\nTotal Issues Found: 23\n\nIssue Breakdown:\n- Fatal Errors: 0\n- Regular Errors: 0\n- Warnings: 5\n- Refactoring Suggestions: 2\n- Convention Violations: 16\n\nDetailed Issues by File:\n--------------------------------------------------\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n  - Line 29: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 41: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 5: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 9: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 15: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  ... and 14 more issues\n\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n  - Line 33: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 42: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 48: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 56: [CONVENTION] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey (use-implicit-booleaness-not-comparison)\n\n==================================================\nRECOMMENDATION:\nCode quality needs attention. Significant refactoring recommended.\n\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"files\": {\n    \"file.py\": {\n      \"issues\": [\n        {\n          \"type\": \"bug|style|design|performance|security|documentation\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"short factual explanation\",\n          \"suggested_fix\": \"high-level idea\"\n        }\n      ]\n    }\n  }\n}\n\nRULES:\n- Valid JSON only\n- No markdown\n- No explanations outside JSON\n",
+            "output_response": "{\"files\": {\"sandbox/dataset_inconnu/calculator.py\": {\"issues\": [{\"type\": \"bug\", \"severity\": \"high\", \"description\": \"Division by zero not handled\", \"suggested_fix\": \"Add check for divisor != 0\"}]}}}",
+            "files_analyzed": 2,
+            "issues_found": 0,
+            "pylint_score": 5.3
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "37379729-2d22-4367-9662-686984c5bf57",
+        "timestamp": "2026-01-10T15:00:13.822793",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nPYLINT ANALYSIS REPORT\n==================================================\nOverall Score: 5.3/10.0\nTotal Issues Found: 23\n\nIssue Breakdown:\n- Fatal Errors: 0\n- Regular Errors: 0\n- Warnings: 5\n- Refactoring Suggestions: 2\n- Convention Violations: 16\n\nDetailed Issues by File:\n--------------------------------------------------\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n  - Line 29: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 41: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 5: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 9: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 15: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  ... and 14 more issues\n\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n  - Line 33: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 42: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 48: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 56: [CONVENTION] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey (use-implicit-booleaness-not-comparison)\n\n==================================================\nRECOMMENDATION:\nCode quality needs attention. Significant refactoring recommended.\n\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"files\": {\n    \"file.py\": {\n      \"issues\": [\n        {\n          \"type\": \"bug|style|design|performance|security|documentation\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"short factual explanation\",\n          \"suggested_fix\": \"high-level idea\"\n        }\n      ]\n    }\n  }\n}\n\nRULES:\n- Valid JSON only\n- No markdown\n- No explanations outside JSON\n",
+            "output_response": "{\"files\": {\"sandbox/dataset_inconnu/calculator.py\": {\"issues\": [{\"type\": \"bug\", \"severity\": \"high\", \"description\": \"Division by zero not handled\", \"suggested_fix\": \"Add check for divisor != 0\"}]}}}",
+            "files_analyzed": 2,
+            "issues_found": 0,
+            "pylint_score": 5.3
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "e3ec33d4-7495-4d89-b7da-c1c56b632a80",
+        "timestamp": "2026-01-10T15:00:16.892045",
+        "agent": "Fixer",
+        "model": "gemini-2.0-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": null,
+            "output_response": "Error fixing sandbox/dataset_inconnu/calculator.py: 1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)",
+            "file": "sandbox/dataset_inconnu/calculator.py",
+            "error": "1 validation error for HumanMessage\ncontent\n  none is not an allowed value (type=type_error.none.not_allowed)"
+        },
+        "status": "FAILURE"
+    },
+    {
+        "id": "b702f8be-fd5b-425e-bc1b-3d56ad5b92bf",
+        "timestamp": "2026-01-10T15:00:16.939581",
+        "agent": "Generator",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_GEN",
+        "details": {
+            "input_prompt": "You are an expert Python test engineer. Create comprehensive pytest tests for this code:\n\nFILE: calculator.py\n\n\nSOURCE CODE:\n```python\ndef divide(a, b):\n    return a / b\n```\n\nREQUIREMENTS FOR TEST FILE:\n1. Create pytest test cases that:\n   - Test all functions and classes\n   - Cover edge cases and error conditions\n   - Validate the issues mentioned above are fixed\n   - Use clear, descriptive test names\n   \n2. Format:\n   - Import the module being tested\n   - Create test_* functions for each public function/method\n   - Use assert statements for validation\n   - Include docstrings for each test\n   \n3. Output ONLY valid Python code in ```python ... ``` blocks\n4. Do NOT include explanations outside code blocks\n5. Start with: import pytest\n6. Ensure tests are independent and can run in any order\n\nGENERATE THE COMPLETE TEST FILE:",
+            "output_response": "import pytest\nfrom calculator import divide\n\ndef test_divide_normal():\n    assert divide(10, 2) == 5\n\ndef test_divide_by_zero():\n    with pytest.raises(ValueError):\n        divide(10, 0)\n\ndef test_divide_floats():\n    assert divide(5.5, 1.1) == pytest.approx(5.0)\n",
+            "source_file": "calculator.py",
+            "test_file": "./sandbox/dataset_inconnu\\tests\\test_calculator.py"
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "1c019f76-d2b7-4dc2-a701-adfa91ee72eb",
+        "timestamp": "2026-01-10T15:02:29.943334",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nPYLINT ANALYSIS REPORT\n==================================================\nOverall Score: 4.9/10.0\nTotal Issues Found: 27\n\nIssue Breakdown:\n- Fatal Errors: 0\n- Regular Errors: 0\n- Warnings: 5\n- Refactoring Suggestions: 2\n- Convention Violations: 20\n\nDetailed Issues by File:\n--------------------------------------------------\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 19\n  - Line 29: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 41: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 5: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 9: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 15: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  ... and 14 more issues\n\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 4\n  - Line 33: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 42: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 48: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 56: [CONVENTION] \"process_list(...) == []\" can be simplified to \"not process_list(...)\", if it is strictly a sequence, as an empty list is falsey (use-implicit-booleaness-not-comparison)\n\nsandbox\\dataset_inconnu\\tests\\test_calculator.py:\n  Issues: 4\n  - Line 1: [CONVENTION] Missing module docstring (missing-module-docstring)\n  - Line 4: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 7: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 11: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n\n==================================================\nRECOMMENDATION:\nCode quality needs attention. Significant refactoring recommended.\n\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\n\"\"\"\nBuggy Calculator Module - Contains multiple issues\n\"\"\"\n\ndef add(a, b):\n    # Missing type hints and docstring\n    return a + b + 1  # BUG: Adding extra 1!\n\ndef subtract(a, b):\n    # Bad naming, no documentation\n    x = a - b\n    y = x\n    return y\n\ndef multiply(a, b):\n    result = 0\n    for i in range(a):\n        result = result + b  # Inefficient - should use a * b\n    return result\n\ndef divide(a, b):\n    # No error handling for division by zero\n    return a / b\n\nclass Calculator:\n    # Missing class docstring\n    def __init__(self):\n        self.history = []\n    \n    def compute(self, op, x, y):\n        # No input validation\n        if op == \"add\":\n            return add(x, y)\n        elif op == \"sub\":\n            return subtract(x, y)\n        elif op == \"mul\":\n            return multiply(x, y)\n        elif op == \"div\":\n            return divide(x, y)\n        # Missing else clause - returns None implicitly\n    \n    def store_result(self, result):\n        # Bare except clause - bad practice\n        try:\n            self.history.append(result)\n        except:\n            print(\"Error\")\n\ndef process_list(items):\n    # Unused variable, no type hints\n    output = []\n    result = None\n    for item in items:\n        output.append(item * 2)\n    return output\n\n# Unused import\nimport sys\nimport os\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\tests\\test_calculator.py\n============================================================\nimport pytest\nfrom calculator import divide\n\ndef test_divide_normal():\n    assert divide(10, 2) == 5\n\ndef test_divide_by_zero():\n    with pytest.raises(ValueError):\n        divide(10, 0)\n\ndef test_divide_floats():\n    assert divide(5.5, 1.1) == pytest.approx(5.0)\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"files\": {\n    \"file.py\": {\n      \"issues\": [\n        {\n          \"type\": \"bug|style|design|performance|security|documentation\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"short factual explanation\",\n          \"suggested_fix\": \"high-level idea\"\n        }\n      ]\n    }\n  }\n}\n\nRULES:\n- Valid JSON only\n- No markdown\n- No explanations outside JSON\n",
+            "output_response": "{\"files\": {\"sandbox/dataset_inconnu/calculator.py\": {\"issues\": [{\"type\": \"bug\", \"severity\": \"high\", \"description\": \"Division by zero not handled\", \"suggested_fix\": \"Add check for divisor != 0\"}]}}}",
+            "files_analyzed": 3,
+            "issues_found": 0,
+            "pylint_score": 4.9
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "043f7da5-97fb-4817-ad2e-416b15a09338",
+        "timestamp": "2026-01-10T15:02:29.998450",
+        "agent": "Fixer",
+        "model": "gemini-2.0-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": null,
+            "output_response": "def divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n",
+            "file": "sandbox/dataset_inconnu/calculator.py",
+            "issues_fixed": 1,
+            "chunks_processed": 1
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "19aacc20-148b-45fe-9599-d08eeec7d6de",
+        "timestamp": "2026-01-10T15:02:30.045737",
+        "agent": "MockTest",
+        "model": "mock-llm",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Mock test orchestration",
+            "output_response": "Mock test passed successfully",
+            "test_type": "mock_run",
+            "target_dir": "./sandbox/dataset_inconnu",
+            "auditor_ok": true,
+            "fixer_ok": true,
+            "generator_ok": true,
+            "judge_ok": true
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "6f30eda6-62fc-435e-8217-96f84034108b",
+        "timestamp": "2026-01-10T15:28:48.175259",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nPYLINT ANALYSIS REPORT\n==================================================\nOverall Score: 1.6/10.0\nTotal Issues Found: 14\n\nIssue Breakdown:\n- Fatal Errors: 0\n- Regular Errors: 5\n- Warnings: 0\n- Refactoring Suggestions: 0\n- Convention Violations: 9\n\nDetailed Issues by File:\n--------------------------------------------------\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 2\n  - Line 1: [CONVENTION] Missing module docstring (missing-module-docstring)\n  - Line 1: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 8\n  - Line 33: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 42: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 48: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 5: [ERROR] No name 'add' in module 'calculator' (no-name-in-module)\n  - Line 5: [ERROR] No name 'subtract' in module 'calculator' (no-name-in-module)\n  ... and 3 more issues\n\nsandbox\\dataset_inconnu\\tests\\test_calculator.py:\n  Issues: 4\n  - Line 1: [CONVENTION] Missing module docstring (missing-module-docstring)\n  - Line 4: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 7: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 11: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n\n==================================================\nRECOMMENDATION:\nCode quality is poor. Major refactoring required.\n\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\ndef divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\tests\\test_calculator.py\n============================================================\nimport pytest\nfrom calculator import divide\n\ndef test_divide_normal():\n    assert divide(10, 2) == 5\n\ndef test_divide_by_zero():\n    with pytest.raises(ValueError):\n        divide(10, 0)\n\ndef test_divide_floats():\n    assert divide(5.5, 1.1) == pytest.approx(5.0)\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"files\": {\n    \"file.py\": {\n      \"issues\": [\n        {\n          \"type\": \"bug|style|design|performance|security|documentation\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"short factual explanation\",\n          \"suggested_fix\": \"high-level idea\"\n        }\n      ]\n    }\n  }\n}\n\nRULES:\n- Valid JSON only\n- No markdown\n- No explanations outside JSON\n",
+            "output_response": "{\"files\": {\"sandbox/dataset_inconnu/calculator.py\": {\"issues\": [{\"type\": \"bug\", \"severity\": \"high\", \"description\": \"Division by zero not handled\", \"suggested_fix\": \"Add check for divisor != 0\"}]}}}",
+            "files_analyzed": 3,
+            "issues_found": 0,
+            "pylint_score": 1.6
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "083fd06b-72de-4d62-8b56-dd105e4c5fb6",
+        "timestamp": "2026-01-10T15:28:48.215389",
+        "agent": "Fixer",
+        "model": "gemini-2.0-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": null,
+            "output_response": "def divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n",
+            "file": "sandbox/dataset_inconnu/calculator.py",
+            "issues_fixed": 1,
+            "chunks_processed": 1
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "775dfb17-ef4e-455e-be17-e73d39bae4aa",
+        "timestamp": "2026-01-10T15:28:48.266940",
+        "agent": "MockTest",
+        "model": "mock-llm",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Mock test orchestration",
+            "output_response": "Mock test passed successfully",
+            "test_type": "mock_run",
+            "target_dir": "./sandbox/dataset_inconnu",
+            "auditor_ok": true,
+            "fixer_ok": true,
+            "generator_ok": true,
+            "judge_ok": true
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "5af40e2e-5528-4881-b3cd-d099b43b5808",
+        "timestamp": "2026-01-10T15:31:03.972576",
+        "agent": "Auditor",
+        "model": "gemini-2.0-flash",
+        "action": "CODE_ANALYSIS",
+        "details": {
+            "input_prompt": "You are a code quality expert. Analyze the following Python code and provide a detailed refactoring plan.\n\nSTATIC ANALYSIS REPORT (from pylint):\n\nPYLINT ANALYSIS REPORT\n==================================================\nOverall Score: 1.6/10.0\nTotal Issues Found: 14\n\nIssue Breakdown:\n- Fatal Errors: 0\n- Regular Errors: 5\n- Warnings: 0\n- Refactoring Suggestions: 0\n- Convention Violations: 9\n\nDetailed Issues by File:\n--------------------------------------------------\n\nsandbox\\dataset_inconnu\\calculator.py:\n  Issues: 2\n  - Line 1: [CONVENTION] Missing module docstring (missing-module-docstring)\n  - Line 1: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n\nsandbox\\dataset_inconnu\\test_calculator.py:\n  Issues: 8\n  - Line 33: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 42: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 48: [CONVENTION] Trailing whitespace (trailing-whitespace)\n  - Line 5: [ERROR] No name 'add' in module 'calculator' (no-name-in-module)\n  - Line 5: [ERROR] No name 'subtract' in module 'calculator' (no-name-in-module)\n  ... and 3 more issues\n\nsandbox\\dataset_inconnu\\tests\\test_calculator.py:\n  Issues: 4\n  - Line 1: [CONVENTION] Missing module docstring (missing-module-docstring)\n  - Line 4: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 7: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n  - Line 11: [CONVENTION] Missing function or method docstring (missing-function-docstring)\n\n==================================================\nRECOMMENDATION:\nCode quality is poor. Major refactoring required.\n\n\nCODE TO ANALYZE:\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\calculator.py\n============================================================\ndef divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\test_calculator.py\n============================================================\n\"\"\"\nUnit tests for calculator module\n\"\"\"\nimport pytest\nfrom calculator import add, subtract, multiply, divide, Calculator, process_list\n\n\ndef test_add():\n    \"\"\"Test the add function\"\"\"\n    assert add(2, 3) == 5\n    assert add(0, 0) == 0\n    assert add(-1, 1) == 0\n\n\ndef test_subtract():\n    \"\"\"Test the subtract function\"\"\"\n    assert subtract(5, 3) == 2\n    assert subtract(0, 5) == -5\n    assert subtract(10, 10) == 0\n\n\ndef test_multiply():\n    \"\"\"Test the multiply function\"\"\"\n    assert multiply(3, 4) == 12\n    assert multiply(0, 5) == 0\n    assert multiply(2, 2) == 4\n\n\ndef test_divide():\n    \"\"\"Test the divide function\"\"\"\n    assert divide(10, 2) == 5.0\n    assert divide(9, 3) == 3.0\n    \n    # Test division by zero - should raise error\n    with pytest.raises(ZeroDivisionError):\n        divide(10, 0)\n\n\ndef test_calculator():\n    \"\"\"Test the Calculator class\"\"\"\n    calc = Calculator()\n    \n    # Test operations\n    assert calc.compute(\"add\", 2, 3) == 5\n    assert calc.compute(\"sub\", 5, 3) == 2\n    assert calc.compute(\"mul\", 3, 4) == 12\n    assert calc.compute(\"div\", 10, 2) == 5.0\n    \n    # Test invalid operation\n    assert calc.compute(\"invalid\", 1, 1) is None\n\n\ndef test_process_list():\n    \"\"\"Test the process_list function\"\"\"\n    assert process_list([1, 2, 3]) == [2, 4, 6]\n    assert process_list([]) == []\n    assert process_list([0, 5]) == [0, 10]\n\n\n============================================================\nFILE: ./sandbox/dataset_inconnu\\tests\\test_calculator.py\n============================================================\nimport pytest\nfrom calculator import divide\n\ndef test_divide_normal():\n    assert divide(10, 2) == 5\n\ndef test_divide_by_zero():\n    with pytest.raises(ValueError):\n        divide(10, 0)\n\ndef test_divide_floats():\n    assert divide(5.5, 1.1) == pytest.approx(5.0)\n\n\n\nANALYSIS REQUIREMENTS:\n1. Review the pylint issues above\n2. Identify additional bugs, bad practices, and quality issues NOT caught by pylint\n3. Focus on issues that will cause test failures\n4. For each issue, provide:\n   - Type of issue (bug, style, performance, security, documentation)\n   - Severity (critical, high, medium, low)\n   - Location (file, line number if possible)\n   - Description of the problem\n   - Suggested fix\n\n5. Output MUST be valid JSON format with this structure:\n{\n  \"files\": {\n    \"file.py\": {\n      \"issues\": [\n        {\n          \"type\": \"bug|style|design|performance|security|documentation\",\n          \"severity\": \"critical|high|medium|low\",\n          \"description\": \"short factual explanation\",\n          \"suggested_fix\": \"high-level idea\"\n        }\n      ]\n    }\n  }\n}\n\nRULES:\n- Valid JSON only\n- No markdown\n- No explanations outside JSON\n",
+            "output_response": "{\"files\": {\"sandbox/dataset_inconnu/calculator.py\": {\"issues\": [{\"type\": \"bug\", \"severity\": \"high\", \"description\": \"Division by zero not handled\", \"suggested_fix\": \"Add check for divisor != 0\"}]}}}",
+            "files_analyzed": 3,
+            "issues_found": 0,
+            "pylint_score": 1.6
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "6f37e363-a1be-49f4-9ee5-b8e1d9809a9b",
+        "timestamp": "2026-01-10T15:31:04.001647",
+        "agent": "Fixer",
+        "model": "gemini-2.0-flash",
+        "action": "FIX",
+        "details": {
+            "input_prompt": null,
+            "output_response": "def divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n",
+            "file": "sandbox/dataset_inconnu/calculator.py",
+            "issues_fixed": 1,
+            "chunks_processed": 1
+        },
+        "status": "SUCCESS"
+    },
+    {
+        "id": "b6612a89-a2f5-459b-8cab-9b13adc83e2a",
+        "timestamp": "2026-01-10T15:31:04.055298",
+        "agent": "MockTest",
+        "model": "mock-llm",
+        "action": "DEBUG",
+        "details": {
+            "input_prompt": "Mock test orchestration",
+            "output_response": "Mock test passed successfully",
+            "test_type": "mock_run",
+            "target_dir": "./sandbox/dataset_inconnu",
+            "auditor_ok": true,
+            "fixer_ok": true,
+            "generator_ok": true,
+            "judge_ok": true
+        },
+        "status": "SUCCESS"
     }
 ]

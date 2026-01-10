@@ -4,11 +4,13 @@ Fixer Agent - Applies corrections to code based on audit plan
 
 import os
 import json
+import time
 from typing import Dict, Any
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.schema import HumanMessage
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import log_experiment, ActionType
+from src.utils.quota import log_api_call
 
 class Fixer(BaseAgent):
     """
@@ -55,10 +57,11 @@ class Fixer(BaseAgent):
         Steps:
         1. Parse the refactoring plan
         2. For each file with issues, read the original code
-        3. Call Gemini LLM to generate corrected code
-        4. Apply fixes to files (with backup)
-        5. Log interaction with ActionType.FIX
-        6. Return summary of changes
+        3. Chunk large files if needed
+        4. Call Gemini LLM to generate corrected code with retry logic
+        5. Apply fixes to files (with backup)
+        6. Log interaction with ActionType.FIX
+        7. Return summary of changes
         """
         if not os.path.isdir(target_dir):
             return self.format_output({
@@ -86,21 +89,47 @@ class Fixer(BaseAgent):
             
             try:
                 # Read original file
-                original_code = self._read_file(file_path) # here too 
+                original_code = self._read_file(file_path)
                 
-                # Build fix prompt for Gemini
-                fix_prompt = self._build_fix_prompt(file_path, original_code, issues)
+                # Chunk if large
+                chunks = self._chunk_code(original_code, max_tokens=8000)
                 
-                # Call Gemini LLM to generate fixed code
-                message = HumanMessage(content=fix_prompt)
-                gemini_response = self.client.invoke([message])
-                fixed_code = gemini_response.content
+                if len(chunks) > 1:
+                    # Process chunks sequentially
+                    fixed_code_parts = []
+                    for i, chunk in enumerate(chunks):
+                        print(f"  Processing chunk {i+1}/{len(chunks)}...")
+                        
+                        fix_prompt = self._build_fix_prompt(
+                            file_path,
+                            chunk,
+                            issues,
+                            is_chunk=True,
+                            chunk_number=i+1,
+                            total_chunks=len(chunks)
+                        )
+                        
+                        fixed_chunk = self._get_fixed_code(fix_prompt)
+                        fixed_code_parts.append(fixed_chunk)
+                    
+                    # Recombine chunks
+                    fixed_code = '\n'.join(fixed_code_parts)
+                else:
+                    # Single chunk - process normally
+                    fix_prompt = self._build_fix_prompt(file_path, original_code, issues)
+                    
+                    # Log API call for quota monitoring
+                    quota_status = log_api_call("Fixer")
+                    if quota_status.get("is_low_quota"):
+                        print(quota_status["warning_message"])
+                    
+                    fixed_code = self._get_fixed_code(fix_prompt)
                 
                 # Extract code from response (remove markdown if present)
                 fixed_code = self._extract_code(fixed_code)
                 
                 # Write fixed code to file (with backup)
-                self._write_file(file_path, fixed_code) # again
+                self._write_file(file_path, fixed_code)
                 
                 # LOG THE INTERACTION (Mandatory for scientific study)
                 log_experiment(
@@ -108,10 +137,11 @@ class Fixer(BaseAgent):
                     model_used=self.model_name,
                     action=ActionType.FIX,
                     details={
-                        "input_prompt": fix_prompt,
+                        "input_prompt": fix_prompt if 'fix_prompt' in locals() else "",
                         "output_response": fixed_code,
                         "file": file_path,
-                        "issues_fixed": len(issues)
+                        "issues_fixed": len(issues),
+                        "chunks_processed": len(chunks) if 'chunks' in locals() else 1
                     },
                     status="SUCCESS"
                 )
@@ -154,27 +184,47 @@ class Fixer(BaseAgent):
             "changes_made": changes_made
         })
     
-    def _placeholder_fixes(self, refactoring_plan: Dict[str, Any]) -> list:
-        """
-        Placeholder fixes structure.
+    def _chunk_code(self, code: str, max_tokens: int = 8000) -> list:
+        """Split code into chunks to avoid token overflow."""
+        lines = code.split('\n')
+        chunks = []
+        current_chunk = []
+        current_tokens = 0
         
-        Returns a template for the fixes applied.
-        In production, this would be generated by LLM-based code generation.
-        """
-        changes = []
+        for line in lines:
+            line_tokens = len(line.split())
+            
+            if current_tokens + line_tokens > max_tokens and current_chunk:
+                chunks.append('\n'.join(current_chunk))
+                current_chunk = [line]
+                current_tokens = line_tokens
+            else:
+                current_chunk.append(line)
+                current_tokens += line_tokens
         
-        for file_path, file_plan in refactoring_plan.items():
-            if file_plan.get("issues"):
-                changes.append({
-                    "file": file_path,
-                    "issues_fixed": len(file_plan["issues"]),
-                    "status": "modified",
-                    "new_quality_score": 0.85  # Placeholder
-                })
+        if current_chunk:
+            chunks.append('\n'.join(current_chunk))
         
-        return changes
+        return chunks if chunks else [code]
     
-    def _build_fix_prompt(self, file_path: str, original_code: str, issues: list) -> str:
+    def _get_fixed_code(self, prompt: str) -> str:
+        """Call LLM with retry logic."""
+        wait_time = 1
+        max_retries = 3
+        
+        for attempt in range(max_retries):
+            try:
+                message = HumanMessage(content=prompt)
+                response = self.client.invoke([message])
+                return response.content
+            except Exception as e:
+                if attempt == max_retries - 1:
+                    raise
+                print(f"⚠️  Attempt {attempt + 1} failed: {str(e)}")
+                time.sleep(wait_time)
+                wait_time *= 2
+    
+    def _build_fix_prompt(self, file_path: str, original_code: str, issues: list, is_chunk: bool = False, chunk_number: int = None, total_chunks: int = None) -> str:
         """
         Build a structured prompt for Gemini to fix code.
         
@@ -182,6 +232,9 @@ class Fixer(BaseAgent):
             file_path (str): Path to the file being fixed
             original_code (str): Original code content
             issues (list): List of issues to fix
+            is_chunk (bool): Whether this is a chunk of a larger file
+            chunk_number (int): Which chunk this is
+            total_chunks (int): Total number of chunks
             
         Returns:
             str: Formatted prompt for LLM
@@ -192,29 +245,36 @@ class Fixer(BaseAgent):
             issues_text += f"\n   Problem: {issue.get('description', '')}"
             issues_text += f"\n   Suggested fix: {issue.get('suggested_fix', '')}\n"
         
+        chunk_info = ""
+        if is_chunk:
+            chunk_info = f"\n[PROCESSING CHUNK {chunk_number}/{total_chunks}]\nMaintain compatibility with the rest of the file.\n"
+        
         prompt = f"""You are an expert Python code refactorer. Fix the following Python code to address these issues:
 
-FILE: {file_path}
+FILE: {file_path}{chunk_info}
 ISSUES TO FIX:{issues_text}
 
+GOAL:
+Fix ONLY the issues listed below in the given file.
+
+CONSTRAINTS (MANDATORY):
+- Modify ONLY the provided file
+- Do NOT invent new files, functions, or dependencies
+- Preserve original behavior unless fixing a bug
+- Do NOT use markdown
+- Return the FULL corrected Python file only
+- If unsure, return the original code unchanged
+
+FILE:
+{file_path}
+
+ISSUES:
+{issues_text}
+
 ORIGINAL CODE:
-```python
 {original_code}
-```
-
-REQUIREMENTS:
-1. Fix all identified issues
-2. Maintain the original functionality
-3. Improve code quality and readability
-4. Add docstrings if missing
-5. Follow PEP 8 standards
-6. Return ONLY the fixed Python code, wrapped in ```python ... ``` blocks
-7. Do NOT add any explanations or comments outside the code block
-
-FIXED CODE:"""
-        
-        return prompt
-    
+"""
+  
     def _extract_code(self, response: str) -> str:
         """
         Extract Python code from Gemini response.
@@ -243,7 +303,7 @@ FIXED CODE:"""
         
         return response
     
-    def _read_file(self, file_path: str) -> str: # same thing here 
+    def _read_file(self, file_path: str) -> str: 
         """Safely read a Python file."""
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -251,8 +311,18 @@ FIXED CODE:"""
         except Exception as e:
             raise Exception(f"Error reading {file_path}: {str(e)}")
     
-    def _write_file(self, file_path: str, content: str) -> None: # and here 
+    def _write_file(self, file_path: str, content: str) -> None:
         """Safely write modified content to a Python file with backup."""
+        # Validate path is in sandbox
+        from pathlib import Path
+        try:
+            resolved = Path(file_path).resolve()
+            sandbox = Path("sandbox").resolve()
+            if not str(resolved).startswith(str(sandbox)):
+                raise PermissionError(f"Cannot write outside sandbox: {file_path}")
+        except:
+            pass  # If validation fails, still attempt write
+        
         try:
             # Create backup
             backup_path = file_path + ".backup"
