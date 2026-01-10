@@ -5,8 +5,11 @@ Judge Agent - Validates fixes using automated tests
 import os
 import subprocess
 import json
+import time
 from typing import Dict, Any
 from src.agents.base_agent import BaseAgent
+from langchain_google_genai import ChatGoogleGenerativeAI
+from src.utils.logger import ActionType
 
 class Judge(BaseAgent):
     """
@@ -21,6 +24,18 @@ class Judge(BaseAgent):
     
     def __init__(self, model_name: str = "pytest"):
         super().__init__(model_name=model_name)
+        try:
+            api_key = os.getenv("GOOGLE_API_KEY")
+            if api_key:
+                self.llm = ChatGoogleGenerativeAI(
+                    model="gemini-2.0-flash",
+                    google_api_key=api_key,
+                    temperature=0.2
+                )
+            else:
+                self.llm = None
+        except:
+            self.llm = None
     
     def validate(self, target_dir: str) -> Dict[str, Any]:
         """
@@ -40,7 +55,7 @@ class Judge(BaseAgent):
     
     def execute(self, target_dir: str) -> Dict[str, Any]:
         """
-        Main execution - run pytest on target directory.
+        Main execution - run pytest on target directory and diagnose failures.
         
         Implementation note: This uses subprocess to run pytest.
         Pytest must be installed (included in requirements.txt).
@@ -51,6 +66,8 @@ class Judge(BaseAgent):
                 "test_output": f"Target directory not found: {target_dir}",
                 "failed_tests": [],
                 "test_count": 0,
+                "diagnosis": None,
+                "feedback": None,
                 "model": self.model_name
             }
         
@@ -61,13 +78,101 @@ class Judge(BaseAgent):
         failed_tests = self._extract_failed_tests(test_output)
         test_count = self._count_tests(test_output)
         
+        # Diagnose failures if tests failed and LLM available
+        diagnosis = None
+        feedback = None
+        if not success and self.llm:
+            diagnosis, feedback = self._diagnose_failures(test_output, target_dir)
+        
         return {
             "tests_passed": success,
             "test_output": test_output,
             "failed_tests": failed_tests,
             "test_count": test_count,
+            "diagnosis": diagnosis,
+            "feedback": feedback,
             "model": self.model_name
         }
+    
+    def _diagnose_failures(self, test_output: str, target_dir: str) -> tuple:
+        """
+        Use LLM to diagnose why tests are failing and provide feedback.
+        
+        Args:
+            test_output (str): Output from pytest
+            target_dir (str): Path to target directory
+            
+        Returns:
+            (diagnosis: str, feedback: str) - LLM diagnosis and actionable feedback
+        """
+        if not self.llm:
+            return None, None
+        
+        try:
+            # Build diagnosis prompt
+            prompt = f"""You are a code debugging expert. Analyze the following test failures and provide:
+1. Root cause analysis of why tests are failing
+2. Specific actionable feedback for the fixer agent to resolve these issues
+
+Test Output:
+{test_output[:2000]}
+
+Target Directory: {target_dir}
+
+Provide your diagnosis in this format:
+DIAGNOSIS: [Root cause analysis]
+FEEDBACK: [Specific actions for the fixer agent]"""
+            
+            # Call LLM with retry logic
+            diagnosis_text = self._call_llm_with_retry(prompt)
+            
+            # Log the diagnosis
+            from src.utils.logger import logger
+            logger.log({
+                "action_type": ActionType.DEBUG.value,
+                "input_prompt": prompt[:500],
+                "output_response": diagnosis_text[:500]
+            })
+            
+            # Parse diagnosis and feedback
+            diagnosis = None
+            feedback = None
+            for line in diagnosis_text.split('\n'):
+                if line.startswith("DIAGNOSIS:"):
+                    diagnosis = line.replace("DIAGNOSIS:", "").strip()
+                elif line.startswith("FEEDBACK:"):
+                    feedback = line.replace("FEEDBACK:", "").strip()
+            
+            return diagnosis or diagnosis_text[:200], feedback or diagnosis_text[200:400]
+        
+        except Exception as e:
+            return f"Diagnosis error: {str(e)}", None
+    
+    def _call_llm_with_retry(self, prompt: str, max_retries: int = 3) -> str:
+        """
+        Call LLM with exponential backoff retry logic.
+        
+        Args:
+            prompt (str): The prompt to send to LLM
+            max_retries (int): Maximum number of retry attempts
+            
+        Returns:
+            str: LLM response
+        """
+        wait_time = 1
+        last_error = None
+        
+        for attempt in range(max_retries):
+            try:
+                response = self.llm.invoke(prompt)
+                return response.content if hasattr(response, 'content') else str(response)
+            except Exception as e:
+                last_error = e
+                if attempt < max_retries - 1:
+                    time.sleep(wait_time)
+                    wait_time *= 2
+        
+        raise last_error or Exception("Failed to call LLM after retries")
     
     def _run_pytest(self, target_dir: str) -> tuple: # this should be in src/tools too
         """
