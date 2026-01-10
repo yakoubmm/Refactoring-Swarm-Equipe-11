@@ -296,27 +296,26 @@ ANALYSIS REQUIREMENTS:
 
 5. Output MUST be valid JSON format with this structure:
 {{
-  "analysis_summary": "Brief overview of code quality",
   "files": {{
-    "file_path": {{
-      "quality_score": 0.0-1.0,
+    "file.py": {{
       "issues": [
         {{
-          "type": "string",
+          "type": "bug|style|design|performance|security|documentation",
           "severity": "critical|high|medium|low",
-          "description": "string",
-          "suggested_fix": "string"
+          "description": "short factual explanation",
+          "suggested_fix": "high-level idea"
         }}
       ]
     }}
-  }},
-  "total_issues": number,
-  "priority_actions": ["list of highest priority fixes"]
+  }}
 }}
 
-Provide the JSON response only, no additional text."""
-        
-        return prompt
+RULES:
+- Valid JSON only
+- No markdown
+- No explanations outside JSON
+"""
+
     
     def _parse_analysis_response(self, llm_output: str, python_files: list) -> Dict[str, Any]:
         """

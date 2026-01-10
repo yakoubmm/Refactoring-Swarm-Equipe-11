@@ -247,24 +247,27 @@ class Fixer(BaseAgent):
 FILE: {file_path}{chunk_info}
 ISSUES TO FIX:{issues_text}
 
+GOAL:
+Fix ONLY the issues listed below in the given file.
+
+CONSTRAINTS (MANDATORY):
+- Modify ONLY the provided file
+- Do NOT invent new files, functions, or dependencies
+- Preserve original behavior unless fixing a bug
+- Do NOT use markdown
+- Return the FULL corrected Python file only
+- If unsure, return the original code unchanged
+
+FILE:
+{file_path}
+
+ISSUES:
+{issues_text}
+
 ORIGINAL CODE:
-```python
 {original_code}
-```
-
-REQUIREMENTS:
-1. Fix all identified issues
-2. Maintain the original functionality
-3. Improve code quality and readability
-4. Add docstrings if missing
-5. Follow PEP 8 standards
-6. Return ONLY the fixed Python code, wrapped in ```python ... ``` blocks
-7. Do NOT add any explanations or comments outside the code block
-
-FIXED CODE:"""
-        
-        return prompt
-    
+"""
+  
     def _extract_code(self, response: str) -> str:
         """
         Extract Python code from Gemini response.
