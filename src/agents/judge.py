@@ -28,9 +28,10 @@ class Judge(BaseAgent):
             api_key = os.getenv("GOOGLE_API_KEY")
             if api_key:
                 self.llm = ChatGoogleGenerativeAI(
-                    model="gemini-2.0-flash",
+                    model="gemini-2.5-flash",
                     google_api_key=api_key,
-                    temperature=0.2
+                    temperature=0.2,
+                    max_retries=0
                 )
             else:
                 self.llm = None
@@ -202,7 +203,7 @@ FEEDBACK: [Specific actions for the fixer agent]"""
         try:
             # Run pytest with verbose output
             result = subprocess.run(
-                ["python", "-m", "pytest", target_dir, "-v", "--tb=short"],
+                ["python", "-m", "pytest", ".", "-v", "--tb=short"],
                 cwd=target_dir,
                 capture_output=True,
                 text=True,

@@ -24,12 +24,12 @@ class Generator(BaseAgent):
     - Log generation with ActionType.GENERATION
     """
     
-    def __init__(self, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, model_name: str = "gemini-2.5-flash"):
         super().__init__(model_name=model_name)
         api_key = os.getenv("GOOGLE_API_KEY")
         if not api_key:
             raise ValueError("GOOGLE_API_KEY environment variable not set")
-        self.client = ChatGoogleGenerativeAI(model=model_name, google_api_key=api_key, temperature=0.2)
+        self.client = ChatGoogleGenerativeAI(model=model_name, google_api_key=api_key, temperature=0.2, max_retries=0)
     
     def generate_tests(self, target_dir: str, current_code: Dict[str, str], audit_plan: Dict[str, Any]) -> Dict[str, Any]:
         """

@@ -25,13 +25,13 @@ class Fixer(BaseAgent):
     Logging: All LLM interactions are logged with ActionType.FIX
     """
     
-    def __init__(self, model_name: str = "gemini-2.0-flash"):
+    def __init__(self, model_name: str = "gemini-2.5-flash"):
         super().__init__(model_name=model_name)
         # Initialize Gemini API via LangChain
         api_key = os.getenv("GOOGLE_API_KEY")
         if not api_key:
             raise ValueError("GOOGLE_API_KEY environment variable not set")
-        self.client = ChatGoogleGenerativeAI(model=model_name, google_api_key=api_key, temperature=0.2)
+        self.client = ChatGoogleGenerativeAI(model=model_name, google_api_key=api_key, temperature=0.2, max_retries=0)
     
     def apply_fixes(self, target_dir: str, refactoring_plan: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -274,6 +274,7 @@ ISSUES:
 ORIGINAL CODE:
 {original_code}
 """
+        return prompt
   
     def _extract_code(self, response: str) -> str:
         """
