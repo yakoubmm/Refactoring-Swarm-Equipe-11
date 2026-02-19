@@ -6,11 +6,13 @@ import os
 import json
 import time
 from typing import Dict, Any
+from pathlib import Path
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.schema import HumanMessage
 from src.agents.base_agent import BaseAgent
 from src.utils.logger import log_experiment, ActionType
 from src.utils.quota import log_api_call
+from src.tools.filesystem import resolve_and_validate_path
 
 class Fixer(BaseAgent):
     """
@@ -87,6 +89,10 @@ class Fixer(BaseAgent):
             if not issues:
                 continue
             
+            # Initialize variables to ensure they're always defined for logging
+            fix_prompt = None
+            chunks = None
+            
             try:
                 # Read original file
                 original_code = self._read_file(file_path)
@@ -132,16 +138,20 @@ class Fixer(BaseAgent):
                 self._write_file(file_path, fixed_code)
                 
                 # LOG THE INTERACTION (Mandatory for scientific study)
+                # Guarantee fix_prompt is never None
+                safe_prompt = fix_prompt if fix_prompt else f"Fix issues in {file_path}"
+                num_chunks = len(chunks) if chunks else 1
+                
                 log_experiment(
                     agent_name="Fixer",
                     model_used=self.model_name,
                     action=ActionType.FIX,
                     details={
-                        "input_prompt": fix_prompt if 'fix_prompt' in locals() else "",
+                        "input_prompt": safe_prompt,
                         "output_response": fixed_code,
                         "file": file_path,
                         "issues_fixed": len(issues),
-                        "chunks_processed": len(chunks) if 'chunks' in locals() else 1
+                        "chunks_processed": num_chunks
                     },
                     status="SUCCESS"
                 )
@@ -158,13 +168,15 @@ class Fixer(BaseAgent):
                 error_msg = f"Error fixing {file_path}: {str(e)}"
                 print(f"❌ {error_msg}")
                 
-                # Log failed fix attempt
+                # Log failed fix attempt - guarantee fix_prompt is never None
+                safe_prompt = fix_prompt if fix_prompt else f"Attempt to fix issues in {file_path}"
+                
                 log_experiment(
                     agent_name="Fixer",
                     model_used=self.model_name,
                     action=ActionType.FIX,
                     details={
-                        "input_prompt": fix_prompt if 'fix_prompt' in locals() else "",
+                        "input_prompt": safe_prompt,
                         "output_response": error_msg,
                         "file": file_path,
                         "error": str(e)
@@ -314,26 +326,24 @@ ORIGINAL CODE:
     
     def _write_file(self, file_path: str, content: str) -> None:
         """Safely write modified content to a Python file with backup."""
-        # Validate path is in sandbox
-        from pathlib import Path
+        # Validate path is in sandbox - THIS MUST SUCCEED OR RAISE
         try:
-            resolved = Path(file_path).resolve()
-            sandbox = Path("sandbox").resolve()
-            if not str(resolved).startswith(str(sandbox)):
-                raise PermissionError(f"Cannot write outside sandbox: {file_path}")
-        except:
-            pass  # If validation fails, still attempt write
+            safe_path = resolve_and_validate_path(file_path)
+        except PermissionError as e:
+            # CRITICAL: Sandbox escape attempt blocked
+            raise PermissionError(f"SANDBOX VIOLATION BLOCKED: {str(e)}")
+        except Exception as e:
+            raise ValueError(f"Invalid file path: {str(e)}")
         
         try:
-            # Create backup
-            backup_path = file_path + ".backup"
-            if os.path.exists(file_path):
-                with open(file_path, 'r', encoding='utf-8') as f:
+            # Create backup of original file
+            backup_path = str(safe_path) + ".backup"
+            if safe_path.exists():
+                with open(safe_path, 'r', encoding='utf-8') as f:
                     with open(backup_path, 'w', encoding='utf-8') as bf:
                         bf.write(f.read())
             
-            # Write new content
-            with open(file_path, 'w', encoding='utf-8') as f:
-                f.write(content)
+            # Write new content to validated safe path
+            safe_path.write_text(content, encoding='utf-8')
         except Exception as e:
             raise Exception(f"Error writing {file_path}: {str(e)}")

@@ -80,6 +80,11 @@ class Generator(BaseAgent):
                 continue
             
             try:
+                # Build test prompt with guaranteed non-None value
+                test_prompt = self._build_test_prompt(filepath, code, audit_plan)
+                if test_prompt is None or len(test_prompt.strip()) == 0:
+                    raise ValueError(f"Cannot generate test prompt for {filepath}")
+                
                 # Generate test file for this source file
                 test_code = self._generate_test_for_file(filepath, code, audit_plan)
                 
@@ -95,13 +100,13 @@ class Generator(BaseAgent):
                 test_files_created.append(test_filepath)
                 print(f"✅ Created: {test_filepath}")
                 
-                # LOG THIS GENERATION
+                # LOG THIS GENERATION - guaranteed non-None prompt
                 log_experiment(
                     agent_name="Generator",
                     model_used=self.model_name,
                     action=ActionType.GENERATION,
                     details={
-                        "input_prompt": self._build_test_prompt(filepath, code, audit_plan),
+                        "input_prompt": test_prompt,  # Use the validated prompt from above
                         "output_response": test_code,
                         "source_file": filepath,
                         "test_file": test_filepath
@@ -114,12 +119,17 @@ class Generator(BaseAgent):
                 print(f"❌ {error_msg}")
                 generation_errors.append(error_msg)
                 
+                # Build test prompt safely for error logging
+                safe_error_prompt = self._build_test_prompt(filepath, code, audit_plan)
+                if safe_error_prompt is None:
+                    safe_error_prompt = f"Error: Could not build test prompt for {filepath}"
+                
                 log_experiment(
                     agent_name="Generator",
                     model_used=self.model_name,
                     action=ActionType.GENERATION,
                     details={
-                        "input_prompt": self._build_test_prompt(filepath, code, audit_plan),
+                        "input_prompt": safe_error_prompt,
                         "output_response": error_msg,
                         "source_file": filepath,
                         "error": str(e)

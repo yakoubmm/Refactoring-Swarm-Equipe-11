@@ -44,14 +44,24 @@ def log_experiment(agent_name: str, model_used: str, action: ActionType, details
     # --- 2. VALIDATION STRICTE DES DONNÉES (Prompts) ---
     # Pour l'analyse scientifique, nous avons absolument besoin du prompt et de la réponse
     # pour les actions impliquant une interaction majeure avec le code.
-    if action_str in [ActionType.ANALYSIS, ActionType.GENERATION, ActionType.DEBUG, ActionType.FIX]:
+    critical_actions = [
+        ActionType.ANALYSIS.value,
+        ActionType.GENERATION.value,
+        ActionType.DEBUG.value,
+        ActionType.FIX.value
+    ]
+    if action_str in critical_actions:
         required_keys = ["input_prompt", "output_response"]
         missing_keys = [key for key in required_keys if key not in details]
         
-        if missing_keys:
+        # Also check that input_prompt and output_response are not None
+        none_keys = [key for key in required_keys if details.get(key) is None]
+        all_invalid = missing_keys + none_keys
+        
+        if all_invalid:
             raise ValueError(
                 f"❌ Erreur de Logging (Agent: {agent_name}) : "
-                f"Les champs {missing_keys} sont manquants dans le dictionnaire 'details'. "
+                f"Les champs {all_invalid} sont manquants ou None dans le dictionnaire 'details'. "
                 f"Ils sont OBLIGATOIRES pour valider le TP."
             )
 
